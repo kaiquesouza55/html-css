@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salão Neca Souza | Jurema</title>
+    <style>
+        :root {
+            --verde-escuro: #0a2218; /* Tom principal masculino e sofisticado */
+            --verde-medio: #133a2b;
+            --verde-salvia: #7ca192; /* Tom que clareia e combina perfeitamente */
+            --creme-claro: #f3f6f4;
+            --detalhe: #bfa17a; /* Bronze/Dourado sutil */
+            --texto-escuro: #16221c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: '-apple-system', BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--creme-claro);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+        }
+
+        /* CABEÇALHO */
+        header {
+            background-color: var(--verde-escuro);
+            color: #ffffff;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: var(--verde-salvia);
+        }
+
+        nav a {
+            color: var(--verde-salvia);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        /* HERO BANNER */
+        .hero {
+            background: linear-gradient(rgba(10, 34, 24, 0.9), rgba(10, 34, 24, 0.95)), url('https://unsplash.com') no-repeat center center/cover;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 46px);
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            color: var(--verde-salvia);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 15px;
+            color: #8faea1;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .btn-agenda {
+            background-color: var(--verde-salvia);
+            color: var(--verde-escuro);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .btn-agenda:hover {
+            background-color: #ffffff;
+            color: var(--verde-escuro);
+        }
+
+        /* SEÇÃO DE AGENDAMENTO SIMPLIFICADO */
+        .agendamento-secao {
+            padding: 60px 6%;
+            background-color: var(--verde-escuro);
+            color: #ffffff;
+        }
+
+        .titulo-secao {
+            text-align: center;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 35px;
+            color: #ffffff;
+        }
+
+        .titulo-secao span {
+            color: var(--verde-salvia);
+        }
+
+        .agendamento-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: var(--verde-medio);
+            padding: 35px 25px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: var(--verde-salvia);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--verde-escuro);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #ffffff;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .form-control:focus {
+            border-color: var(--verde-salvia);
+        }
+
+        .btn-enviar-agenda {
+            width: 100%;
+            background-color: var(--verde-salvia);
+            color: var(--verde-escuro);
+            border: none;
+            padding: 14px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-enviar-agenda:hover {
+            background-color: #ffffff;
+        }
+
+        /* CONTATO E LOCALIZAÇÃO */
+        footer {
+            background-color: #05130e;
+            color: #6a857a;
+            padding: 50px 6% 30px 6%;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.02);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .footer-col a {
+            color: var(--verde-salvia);
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.03);
+            padding-top: 20px;
+            font-size: 11px;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <header>
+        <div class="logo">Salão <span>Neca Souza</span></div>
+        <nav>
+            <a href="#agendar">Reservar Horário</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- BANNER PRINCIPAL -->
+    <section class="hero">
+        <h1>Corte <span>Masculino</span></h1>
+        <p>Estilo e precisão no seu visual. Atendimento na Jurema.</p>
+        <a href="#agendar" class="btn-agenda">Escolher Horário</a>
+    </section>
+
+    <!-- FORMULÁRIO DIRETO -->
+    <section class="agendamento-secao" id="agendar">
+        <h2 class="titulo-secao">Agende seu <span>Corte Normal</span></h2>
+        <div class="agendamento-container">
+            <form id="formAgendamento" onsubmit="enviarWhatsApp(event)">
+                
+                <div class="form-group">
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" id="nome" class="form-control" placeholder="Ex: Carlos Oliveira" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="data">Escolha o Dia</label>
+                    <input type="date" id="data" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="horario">Escolha o Horário</label>
+                    <select id="horario" class="form-control" required>
+                        <option value="">Selecione um horário disponível...</option>
+                        <option value="08:00">08:00</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                        <option value="20:00">20:00</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-enviar-agenda">Enviar via WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CONTATOS -->
+    <footer id="contato">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Localização</h4>
+                <p>Bairro Jurema</p>
+                <p>Corte Masculino de Confiança</p>
+            </div>
+            <div class="footer-col">
+                <h4>Funcionamento</h4>
+                <p>Das 08:00 às 20:00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <p>WhatsApp para dúvidas:</p>
+                <p><a href="https://wa.me" target="_blank">(77) 99101-2116</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Salão Neca Souza. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+          <script>
+        function enviarWhatsApp(event) {
+            event.preventDefault();
+            
+            // Captura os dados das caixas de texto
+            const nome = document.getElementById('nome').value;
+            const dataInput = document.getElementById('data').value;
+            const horario = document.getElementById('horario').value;
+            
+            // Transforma o formato da data para DD/MM/AAAA
+            const dataFormatada = dataInput.split('-').reverse().join('/');
+
+            // Monta o texto limpo usando apenas duas crases
+            const textoMensagem = `Olá Neca! Gostaria de agendar um corte masculino:
+
+• *Nome:* ${nome}
+• *Dia:* ${dataFormatada}
+• *Horário:* ${horario}`;
+            
+            // Codifica a mensagem para formato de link
+            const textoCodificado = encodeURIComponent(textoMensagem);
+            
+            // Altere este número para o telefone real da Neca quando quiser testar
+            const numeroTelefone = "(77)99101-2116"; 
+            
+            // Abre o WhatsApp com a mensagem pronta
+            window.open(`https://wa.me{99101-2116}?text=${textoCodificado}`, '_blank');
+        }
+    </script>
+ 
